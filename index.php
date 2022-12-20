@@ -54,10 +54,7 @@
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
-
-    <video controls muted autoplay> 
-  <source src="img/video.mp4" type="video/mp4">
-</video>
+texto
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
@@ -72,6 +69,13 @@
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
   </div>
+  </div>
+  <hr>
+  <div style="position: absolute;top:50%;left:50%;">
+  <video width="200px" controls muted autoplay> 
+  <source src="img/videooo.mp4" type="video/mp4">
+</video>
+</div>
 </body>
 
 </html>
