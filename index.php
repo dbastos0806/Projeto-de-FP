@@ -7,7 +7,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <meta name="description" content="">
   <meta name="author" content="">
-  <title>pagina principal</title>
+  <title>Pagina principal</title>
   <!-- Bootstrap core CSS-->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- Custom fonts for this template-->
@@ -54,11 +54,16 @@
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
-
-    <video controls muted autoplay> 
+<table><td>
+    <video width="1200px" controls muted autoplay > 
   <source src="img/video.mp4" type="video/mp4">
-</video>
+</video></td>
+<td>
+    <video width="1200px" controls muted autoplay > 
+  <source src="img/video.mp4" type="video/mp4">
+</video></td>
 
+</table>
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>

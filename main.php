@@ -184,19 +184,20 @@
                 <tr>
                   <th>Driver ID</th>
                   <th>Code</th>
-                  <th>Forename</th>
-                  <th>Surname</th>
+                  <th>Name</th>
+                  <th>country</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
                   <th>Driver ID</th>
                   <th>Code</th>
-                  <th>Forename</th>
-                  <th>Surname</th>
+                  <th>Name</th>
+                  <th>country</th>
                 </tr>
               </tfoot>
-              <?php
+              <tbody>.
+                <?php
               $servername = "localhost";
               $username = "root";
               $password = "";
@@ -216,7 +217,7 @@
               if (mysqli_num_rows($result) > 0) {
                 // output data of each row
                 while ($row = mysqli_fetch_assoc($result)) { ?>
-              <tbody>
+
                 <tr>
                   <th>
                     <?php echo $row['driverId']; ?>
@@ -225,23 +226,23 @@
                     <?php echo $row['code']; ?>
                   </td>
                   <td>
-                    <?php echo $row['forename']; ?>
+                    <?php echo $row['forename'] . " " . $row['surname']; ?>
                   </td>
                   <td>
-                    <?php echo $row['surname']; ?>
+                    <?php echo "<img width='20px' src='img/flags/" . $row['nationality'] . ".svg'>"; ?>
                   </td>
                 </tr>
-              </tbody>
 
 
-              <?php
+
+                <?php
                   $count++;
                 }
               } else {
                 echo '0 results';
               }
               ?>
-
+              </tbody>
             </table>
           </div>
         </div>
