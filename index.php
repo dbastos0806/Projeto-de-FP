@@ -54,16 +54,13 @@
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
-<table><td>
+    <div>
     <video width="1200px" controls muted autoplay > 
   <source src="img/video.mp4" type="video/mp4">
-</video></td>
-<td>
-    <video width="1200px" controls muted autoplay > 
-  <source src="img/video.mp4" type="video/mp4">
-</video></td>
+</video>
+</div>
 
-</table>
+
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
