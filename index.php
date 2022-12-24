@@ -54,17 +54,18 @@
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
-    <div>
-    <video width="1200px" controls muted autoplay > 
-  <source src="img/video.mp4" type="video/mp4">
-</video>
-</div>
-
+   
 
     <!-- Scroll to Top Button-->
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
+    </div Top="50%">
+    <video width="400px" controls muted autoplay > 
+  <source src="img/video.mp4" type="video/mp4">
+</video>
+</div>
+
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
