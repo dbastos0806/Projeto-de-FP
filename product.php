@@ -40,7 +40,7 @@ include('pserver.php');
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
             <i class="fa fa-check-square"></i>
-            <span class="nav-link-text">Create Products</span>
+            <span class="nav-link-text">Paginas para edição</span>
           </a>
         </li>
 
@@ -59,105 +59,7 @@ include('pserver.php');
           </a>
         </li>
       </ul>
-
       <ul class="navbar-nav ml-auto">
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-lg-2" id="messagesDropdown" href="#" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-envelope"></i>
-            <span class="d-lg-none">Messages
-              <span class="badge badge-pill badge-primary">12 New</span>
-            </span>
-            <span class="indicator text-primary d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
-            </span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="messagesDropdown">
-            <h6 class="dropdown-header">New Messages:</h6>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>David Miller</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">Hey there! This new version of SB Admin is pretty awesome! These
-                messages clip off when they reach the end of the box so they don't overflow over to the sides!</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>Jane Smith</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">I was wondering if you could meet for an appointment at 3:00 instead
-                of 4:00. Thanks!</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <strong>John Doe</strong>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">I've sent the final files over to you for review. When you're able to
-                sign off of them let me know and we can discuss distribution.</div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all messages</a>
-          </div>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle mr-lg-2" id="alertsDropdown" href="#" data-toggle="dropdown"
-            aria-haspopup="true" aria-expanded="false">
-            <i class="fa fa-fw fa-bell"></i>
-            <span class="d-lg-none">Alerts
-              <span class="badge badge-pill badge-warning">6 New</span>
-            </span>
-            <span class="indicator text-warning d-none d-lg-block">
-              <i class="fa fa-fw fa-circle"></i>
-            </span>
-          </a>
-          <div class="dropdown-menu" aria-labelledby="alertsDropdown">
-            <h6 class="dropdown-header">New Alerts:</h6>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.
-              </div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-danger">
-                <strong>
-                  <i class="fa fa-long-arrow-down fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.
-              </div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">
-              <span class="text-success">
-                <strong>
-                  <i class="fa fa-long-arrow-up fa-fw"></i>Status Update</strong>
-              </span>
-              <span class="small float-right text-muted">11:21 AM</span>
-              <div class="dropdown-message small">This is an automated server response message. All systems are online.
-              </div>
-            </a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item small" href="#">View all alerts</a>
-          </div>
-        </li>
-        <li class="nav-item">
-          <form class="form-inline my-2 my-lg-0 mr-lg-2">
-            <div class="input-group">
-              <input class="form-control" type="text" placeholder="Search for...">
-              <span class="input-group-append">
-                <button class="btn btn-primary" type="button">
-                  <i class="fa fa-search"></i>
-                </button>
-              </span>
-            </div>
-          </form>
-        </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
             <i class="fa fa-fw fa-sign-out"></i>Logout</a>
@@ -167,19 +69,98 @@ include('pserver.php');
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
+
       <!-- Breadcrumbs-->
       <ol class="breadcrumb">
         <li class="breadcrumb-item">
           <a href="main.php">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Product Page</li>
+        <li class="breadcrumb-item active">Admin</li>
       </ol>
+
       <div class="row">
         <div class="col-12">
-          <h1>Create Product </h1>
+          <h1>Gestão de Utilizadores </h1>
         </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-header">
+          <i class="fa fa-table"></i>Table Users
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+              <thead>
+                <tr>
+                  <th>User ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>User type</th>
+                </tr>
+              </thead>
+              <tfoot>
+                <tr>
+                  <th>User ID</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>User type</th>
+                </tr>
+              </tfoot>
+              <tbody>
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $dbname = "formula1";
 
-        <div class="col-md-8">
+                // Create connection
+                $conn = new mysqli($servername, $username, $password, $dbname);
+
+                $sql = 'SELECT * from users';
+                if (mysqli_query($conn, $sql)) {
+                  echo "";
+                } else {
+                  echo "Error: " . $sql . "<br>" . mysqli_error($conn);
+                }
+                $count = 1;
+                $result = mysqli_query($conn, $sql);
+                if (mysqli_num_rows($result) > 0) {
+                  // output data of each row
+                  while ($row = mysqli_fetch_assoc($result)) { ?>
+
+                <tr>
+                  <th>
+                    <?php echo $row['UserId']; ?>
+                  </th>
+                  <td>
+                    <?php echo $row['Name']; ?>
+                  </td>
+                  <td>
+                    <?php echo $row['Email'] ?>
+                  </td>
+                  <td>
+                    <?php echo $row['UserType'] ?>
+                  </td>
+                </tr>
+
+
+
+                <?php
+                    $count++;
+                  }
+                } else {
+                  echo '0 results';
+                }
+                ?>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer small text-muted">last Update</div>
+      </div>
+    </div>
+
+    <!-- <div class="col-md-8">
 
           <form method="post" action="product.php">
 
@@ -208,7 +189,8 @@ include('pserver.php');
 
         </div>
       </div>
-    </div>
+    </div> -->
+
     <!-- /.container-fluid-->
     <!-- /.content-wrapper-->
     <footer class="sticky-footer">
@@ -236,7 +218,7 @@ include('pserver.php');
           <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
           <div class="modal-footer">
             <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
-            <a class="btn btn-primary" href="main.php">Logout</a>
+            <a class="btn btn-primary" href="index.php">Logout</a>
           </div>
         </div>
       </div>
@@ -246,8 +228,15 @@ include('pserver.php');
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Core plugin JavaScript-->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+    <!-- Custom scripts for this page-->
+    <script src="js/sb-admin-datatables.min.js"></script>
+    <script src="js/sb-admin-charts.min.js"></script>
   </div>
 </body>
 
