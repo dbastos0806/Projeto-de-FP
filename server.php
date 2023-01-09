@@ -18,7 +18,7 @@ if (isset($_POST['reg_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password_1']);
   $password_2 = mysqli_real_escape_string($db, $_POST['password_2']);
-
+  $userType = "Customer";
 
 
 
@@ -44,11 +44,11 @@ if (isset($_POST['reg_user'])) {
   $user = mysqli_fetch_assoc($result);
 
   if ($user) { // if user exists
-    if ($user['username'] === $username) {
+    if ($user['Name'] === $username) {
       array_push($errors, "Username already exists");
     }
 
-    if ($user['email'] === $email) {
+    if ($user['Email'] === $email) {
       array_push($errors, "email already exists");
     }
   }
@@ -59,13 +59,36 @@ if (isset($_POST['reg_user'])) {
 
     echo $password;
 
-    $query = "INSERT INTO users(Name, Email, Password_hash) VALUES('$username', '$email', '$password')";
+    $query = "INSERT INTO users(Name, Email, Password_hash,UserType) VALUES('$username', '$email', '$password','$userType')";
     mysqli_query($db, $query);
     $_SESSION['username'] = $username;
     $_SESSION['success'] = "You are now logged in";
     header('location: login.php');
   }
 }
+//edit
+if (isset($_POST['edit_user'])) {
+  // receive all input values from the form
+  $editId = mysqli_real_escape_string($db, $_POST['editId']);
+  $username = mysqli_real_escape_string($db, $_POST['username']);
+  $email = mysqli_real_escape_string($db, $_POST['email']);
+  $userType = mysqli_real_escape_string($db, $_POST['usertype']);
+
+  $sqldb = new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
+  $sql = $sqldb->prepare("UPDATE users SET UserId=?,Name=?,Email=?,,UserType= ? WHERE UserId = ?");
+try {
+$sql->bindParam(1, $_POST['editId']);
+$sql->bindParam(2, $_POST['username']);
+$sql->bindParam(3, $_POST['email']);
+$sql->bindParam(4, $_POST['usertype']);
+$sql->bindParam(5, $_POST['editId']);
+$sql->execute();
+}
+
+ //header('location: product.php');
+  }
+
+   
 
 // ... 
 

@@ -22,7 +22,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="main.php">Formula 1</a>
+    <a class="navbar-brand" href="circuits.php">Formula 1</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
       data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
       aria-label="Toggle navigation">
@@ -35,31 +35,20 @@
             <i class="fa fa-fw fa-dashboard"></i>
             <span class="nav-link-text">Pilots</span>
           </a>
-        </li>
+          </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="pistas.php">
             <i class="fa fas fa-map"></i>
             <span class="nav-link-text">Circuits</span>
             </a>
         </li>
+        
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="product.php">
             <i class="fa fas fa-user"></i>
             <span class="nav-link-text">Users</span>
           </a>
         </li>
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="charts.html">
-            <i class="fa fa-check-square"></i>
-            <span class="nav-link-text">Paginas para edição</span>
-          </a>
-        </li> -->
-        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
-          <a class="nav-link" href="register.php">
-            <i class="fa fas fa-user"></i>
-            <span class="nav-link-text">Register Users</span>
-          </a>
-        </li> -->
 
       </ul>
       <ul class="navbar-nav sidenav-toggler">
@@ -88,7 +77,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">Pilots</li>
+        <li class="breadcrumb-item active">My Dashboard</li>
       </ol>
       <!-- Tables-->
       <div class="card mb-3">
@@ -100,17 +89,19 @@
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
               <thead>
                 <tr>
-                  <th>Driver ID</th>
-                  <th>Code</th>
+                  <th>Circuit Id</th>
+                  <th>Circuit REF</th>
                   <th>Name</th>
+                  <th>location</th>
                   <th>country</th>
                 </tr>
               </thead>
               <tfoot>
                 <tr>
-                  <th>Driver ID</th>
-                  <th>Code</th>
+                  <th>Circuit Id</th>
+                  <th>Circuit REF</th>
                   <th>Name</th>
+                  <th>location</th>
                   <th>country</th>
                 </tr>
               </tfoot>
@@ -124,7 +115,7 @@
                 // Create connection
                 $conn = new mysqli($servername, $username, $password, $dbname);
 
-                $sql = 'SELECT * from drivers';
+                $sql = 'SELECT * FROM `circuits`';
                 if (mysqli_query($conn, $sql)) {
                   echo "";
                 } else {
@@ -138,16 +129,20 @@
 
                     <tr>
                       <th>
-                        <?php echo $row['driverId']; ?>
+                        <?php echo $row['circuitId']; ?>
                       </th>
                       <td>
-                        <?php echo $row['code']; ?>
+                        <?php echo $row['circuitRef']; ?>
                       </td>
                       <td>
-                        <?php echo $row['forename'] . " " . $row['surname']; ?>
+                        <?php echo $row['name']; ?>
+
                       </td>
                       <td>
-                        <?php echo "<img width='20px' src='img/flags/" . $row['nationality'] . ".svg'>"; ?>
+                        <?php echo $row['country']; ?>
+                      </td>
+                      <td>
+                        <?php echo $row['location']; ?>
                       </td>
                     </tr>
 

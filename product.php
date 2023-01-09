@@ -18,6 +18,12 @@ include('pserver.php');
   <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
   <!-- Custom styles for this template-->
   <link href="css/sb-admin.css" rel="stylesheet">
+  <script>
+    function confirmar() {
+      var result = confirm("Tem a certeza que pretende apagar?");
+      return result;
+    }
+  </script>
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -34,14 +40,21 @@ include('pserver.php');
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
           <a class="nav-link" href="main.php">
             <i class="fa fa-fw fa-dashboard"></i>
-            <span class="nav-link-text">Dashboard</span>
+            <span class="nav-link-text">Pilots</span>
           </a>
         </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+        <!-- <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
           <a class="nav-link" href="charts.html">
             <i class="fa fa-check-square"></i>
             <span class="nav-link-text">Paginas para edição</span>
           </a>
+        </li> -->
+
+        <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+          <a class="nav-link" href="pistas.php">
+            <i class="fa fas fa-map"></i>
+            <span class="nav-link-text">Circuits</span>
+            </a>
         </li>
 
         <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
@@ -52,17 +65,21 @@ include('pserver.php');
         </li>
 
       </ul>
+
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="" href="#" id="toggleNavColor">teste</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
+            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
+        </li>
+      </ul>
       <ul class="navbar-nav sidenav-toggler">
         <li class="nav-item">
           <a class="nav-link text-center" id="sidenavToggler">
             <i class="fa fa-fw fa-angle-left"></i>
           </a>
-        </li>
-      </ul>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item">
-          <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
-            <i class="fa fa-fw fa-sign-out"></i>Logout</a>
         </li>
       </ul>
     </div>
@@ -96,6 +113,7 @@ include('pserver.php');
                   <th>Name</th>
                   <th>Email</th>
                   <th>User type</th>
+                  <th></th>
                 </tr>
               </thead>
               <tfoot>
@@ -104,6 +122,7 @@ include('pserver.php');
                   <th>Name</th>
                   <th>Email</th>
                   <th>User type</th>
+                  <th></th>
                 </tr>
               </tfoot>
               <tbody>
@@ -128,24 +147,30 @@ include('pserver.php');
                   // output data of each row
                   while ($row = mysqli_fetch_assoc($result)) { ?>
 
-                <tr>
-                  <th>
-                    <?php echo $row['UserId']; ?>
-                  </th>
-                  <td>
-                    <?php echo $row['Name']; ?>
-                  </td>
-                  <td>
-                    <?php echo $row['Email'] ?>
-                  </td>
-                  <td>
-                    <?php echo $row['UserType'] ?>
-                  </td>
-                </tr>
+                    <tr>
+                      <th>
+                        <?php echo $row['UserId']; ?>
+                      </th>
+                      <td>
+                        <?php echo $row['Name']; ?>
+                      </td>
+                      <td>
+                        <?php echo $row['Email'] ?>
+                      </td>
+                      <td>
+                        <?php echo $row['UserType'] ?>
+                      </td>
+                      <td>
+                        <a href="edit_user.php?editId=<?php echo $row['UserId'] . '&username=' . $row['Name'] . '&email=' . $row['Email'] . '&usertype=' . $row['UserType'] ?>"
+                          class="btn btn-primary"><i class="bi bi-pencil"></i> Edit</a>
+                        <a onclick="return confirmar();" href="delete_user.php?delId=<?php echo $row['UserId'] ?>"
+                          class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
+                      </td>
+                    </tr>
 
 
 
-                <?php
+                    <?php
                     $count++;
                   }
                 } else {
@@ -237,6 +262,14 @@ include('pserver.php');
     <!-- Custom scripts for this page-->
     <script src="js/sb-admin-datatables.min.js"></script>
     <script src="js/sb-admin-charts.min.js"></script>
+    <script>
+      $('#toggleNavColor').click(function () {
+        $('nav').toggleClass('navbar-dark navbar-light');
+        $('nav').toggleClass('bg-dark bg-light');
+        $('body').toggleClass('bg-dark bg-light');
+      });
+
+    </script>
   </div>
 </body>
 

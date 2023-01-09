@@ -23,7 +23,7 @@
       <div class="card-header">Register an Account</div>
       <div class="card-body">
         <form method="post" action="register.php">
-          <?php include('errors.php'); ?>
+         <?php include('errors.php'); ?>
           <div class="form-group">
             <div class="form-row">
               <div class="col-md-12">

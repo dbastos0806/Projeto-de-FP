@@ -46,6 +46,10 @@
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
+        <a class="" href="#" id="toggleNavColor">teste</a>
+</li>
+
+        <li class="nav-item">
           <a href="login.php">
             <i class="fa fa-fw fa-sign-in"></i>Login</a>
         </li>
@@ -57,15 +61,20 @@
    
 
     <!-- Scroll to Top Button-->
+    <div class="row">
+        <div class="col-12">
+          <h1>Projeto final </h1>
+        </div>
+      </div>
+
     <a class="scroll-to-top rounded" href="#page-top">
       <i class="fa fa-angle-up"></i>
     </a>
     </div Top="50%">
-    <video width="400px" controls muted autoplay > 
+    <video width="62%" controls muted autoplay > 
   <source src="img/video.mp4" type="video/mp4">
 </video>
 </div>
-
 
     <!-- Bootstrap core JavaScript-->
     <script src="vendor/jquery/jquery.min.js"></script>
@@ -74,6 +83,14 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="js/sb-admin.min.js"></script>
+    <script>
+      $('#toggleNavColor').click(function () {
+        $('nav').toggleClass('navbar-dark navbar-light');
+        $('nav').toggleClass('bg-dark bg-light');
+        $('body').toggleClass('bg-dark bg-light');
+      });
+
+    </script>
   </div>
 </body>
 
