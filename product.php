@@ -68,7 +68,7 @@ include('pserver.php');
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="" href="#" id="toggleNavColor">teste</a>
+          <a class="" href="#" id="toggleNavColor"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">

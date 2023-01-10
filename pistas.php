@@ -22,7 +22,7 @@
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
   <!-- Navigation-->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
-    <a class="navbar-brand" href="circuits.php">Formula 1</a>
+    <a class="navbar-brand" href="main.php">Formula 1</a>
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
       data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
       aria-label="Toggle navigation">
@@ -61,7 +61,7 @@
 
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="" href="#" id="toggleNavColor">teste</a>
+          <a class="" href="#" id="toggleNavColor"><i class="fa fa-moon-o" aria-hidden="true"></i></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" data-toggle="modal" data-target="#exampleModal">
@@ -77,7 +77,7 @@
         <li class="breadcrumb-item">
           <a href="#">Dashboard</a>
         </li>
-        <li class="breadcrumb-item active">My Dashboard</li>
+        <li class="breadcrumb-item active">Circuits</li>
       </ol>
       <!-- Tables-->
       <div class="card mb-3">
