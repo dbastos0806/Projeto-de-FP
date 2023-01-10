@@ -74,21 +74,19 @@ if (isset($_POST['edit_user'])) {
   $email = mysqli_real_escape_string($db, $_POST['email']);
   $userType = mysqli_real_escape_string($db, $_POST['usertype']);
 
-  $sqldb = new PDO("mysql:host=$servername;dbname=$dbname",$username,$password);
-  $sql = $sqldb->prepare("UPDATE users SET UserId=?,Name=?,Email=?,,UserType= ? WHERE UserId = ?");
+  $sqldb = new PDO("mysql:host=localhost;dbname=formula1","root","");
+  $sql = $sqldb->prepare("UPDATE users SET Name=?,Email=?,UserType= ? WHERE UserId = ?");
 try {
-$sql->bindParam(1, $_POST['editId']);
-$sql->bindParam(2, $_POST['username']);
-$sql->bindParam(3, $_POST['email']);
-$sql->bindParam(4, $_POST['usertype']);
-$sql->bindParam(5, $_POST['editId']);
+$sql->bindParam(1, $_POST['username']);
+$sql->bindParam(2, $_POST['email']);
+$sql->bindParam(3, $_POST['usertype']);
+$sql->bindParam(4, $_POST['editId']);
 $sql->execute();
 }
+catch(Exception $ex){}
 
- //header('location: product.php');
+header('location: product.php');
   }
-
-   
 
 // ... 
 
@@ -117,4 +115,27 @@ if (isset($_POST['login_user'])) {
     }
   }
 }
+if (isset($_POST['edit_pilot'])) {
+  // receive all input values from the form
+  $driverId = mysqli_real_escape_string($db, $_POST['driverId']);
+  $code = mysqli_real_escape_string($db, $_POST['code']);
+  $forname = mysqli_real_escape_string($db, $_POST['forename']);
+  $surname = mysqli_real_escape_string($db, $_POST['surname']);
+  $surname = mysqli_real_escape_string($db, $_POST['nationality']);
+
+  $sqldb = new PDO("mysql:host=localhost;dbname=formula1","root","");
+  $sql = $sqldb->prepare("UPDATE drivers SET code=?,forename=?,surname= ?,nationality=? WHERE driverId = ?");
+try {
+$sql->bindParam(1, $_POST['code']);
+$sql->bindParam(2, $_POST['forename']);
+$sql->bindParam(3, $_POST['surname']);
+$sql->bindParam(4, $_POST['nationality']);
+$sql->bindParam(5, $_POST['driverId']);
+$sql->execute();
+}
+catch(Exception $ex){}
+
+header('location: main.php');
+  }
+
 ?>

@@ -104,6 +104,7 @@
                   <th>Code</th>
                   <th>Name</th>
                   <th>country</th>
+                  <th></th>
                 </tr>
               </thead>
               <tfoot>
@@ -112,6 +113,7 @@
                   <th>Code</th>
                   <th>Name</th>
                   <th>country</th>
+                  <th></th>
                 </tr>
               </tfoot>
               <tbody>
@@ -147,7 +149,13 @@
                         <?php echo $row['forename'] . " " . $row['surname']; ?>
                       </td>
                       <td>
-                        <?php echo "<img width='20px' src='img/flags/" . $row['nationality'] . ".svg'>"; ?>
+                        <?php echo "<img width='20px' src='img/flags/" . $row['nationality'] . ".svg'>" . "  ". $row['nationality'] ; ?>
+                      </td>
+                      <td>
+                        <a href="edit_pilot.php?driverId=<?php echo $row['driverId'] . '&code=' . $row['code'] . '&forename=' . $row['forename'] . '&surname=' . $row['surname'].'&nationality='. $row['nationality'] ?>"
+                          class="btn btn-primary"><i class="bi bi-pencil"></i> Edit</a>
+                        <a onclick="return confirmar();" href="delete_pilot.php?delpId=<?php echo $row['driverId'] ?>"
+                          class="btn btn-danger"><i class="bi bi-trash"></i>Delete</a>
                       </td>
                     </tr>
 
